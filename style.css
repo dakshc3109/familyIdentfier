@@ -1,0 +1,15 @@
+#header{
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 50px; 
+    text-align: center;
+} 
+
+hr{
+    color: white; 
+}
+
+#camera{
+    border: 2px dashed black;
+    width: 350px;
+    height: 300px;
+}
