@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -17,7 +18,6 @@
 </head>
 <body style="background-color: pink;">
     <center>
-    <!--https://teachablemachine.withgoogle.com/models/7WCUSC7Sw/-->
     <h3 id="header">Image Identifier</h3>
     <h3 style="font-family: 'Zen Tokyo Zoo', cursive; text-align: center;">This model is trained to identify</h6>
     <b id="name_of_persons">
@@ -31,15 +31,18 @@
         <hr>
     </b>
 
-    <label>Webcam View - </label>
-    <div id="camera"></div>
-    <br><br>
-    <div id="result"></div>
+      <label>Webcam View - </label>
+      <div id="camera"></div>
       <br><br>
-      <button id="capture" onclick="take_snapshot()" class="btn btn-info">Capture Image</button>
+      <div id="result"></div>
+      <br><br>
+      <button id="capture" onclick="capture()" class="btn btn-info">Capture Image</button>
       <br><br>
       <button id="identify" onclick="check()" class="btn btn-success">Identify Image</button>
       <br><br>
+
+      <p style="font-size: 22px;">Object :  <span id="object"></span></p>
+      <p style="font-size: 22px;">Accuracy :  <span id="accuracy"></span></p>
 </center>
     <script src="main.js"></script>
 </body>
