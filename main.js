@@ -19,8 +19,24 @@ function capture(){
 
 console.log("ml5 version: ",ml5.version);
 
-var classifier = ml5.imageClassifier("https://storage.googleapis.com/tm-model/-57PUIvXf/model.json", modelLoaded);
+var classifier = ml5.imageClassifier("https://storage.googleapis.com/tm-model/7WCUSC7Sw/model.json", modelLoaded);
 
 function modelLoaded(){
     console.log("model loaded!");
 };
+
+function check(){
+    var img = document.getElementById("captured_img");
+    classifier.classify(img, gotResult);
+}
+
+function gotResult(error, result){
+    if(error){
+        console.error();
+    }
+    else{
+        console.log(result);
+        document.getElementById("object").innerHTML = result[0].label;
+        document.getElementById("accuracy").innerHTML = result[0].confidence.toFixed(3); 
+    }
+}
